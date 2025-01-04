@@ -2,26 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+.nav {
+  @apply flex justify-between m-auto gap-4 items-center
+}
+.nav *:not(button) {
+  @apply text-lg w-auto hover:text-cyan-300 transition-all duration-300 
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.clickable {
+  @apply duration-300 transition-all hover:scale-110 cursor-pointer
 }
