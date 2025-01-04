@@ -1,3 +1,4 @@
+import ProjectsTable from "./_components/Projects/ProjectTable";
 import TagList from "./_components/TagList";
 
 export default function Home() {
@@ -35,17 +36,17 @@ export default function Home() {
           Get to know me
         </p>
         <p className="text-center">
-          Hi there! I'm Gustavo Dias, a data scientist specializing in data
+          Hi there! I&apos;m Gustavo Dias, a data scientist specializing in data
           analytics, predictive modeling, natural language processing, machine
           learning, and AI chatbots. With a passion for unraveling insights from
-          complex datasets, I'm dedicated to helping businesses make informed
-          decisions and stay ahead in today's data-driven world. I bring a blend
+          complex datasets, I&apos;m dedicated to helping businesses make informed
+          decisions and stay ahead in today&apos;s data-driven world. I bring a blend
           of technical expertise, hands-on experience, and a commitment to clear
-          communication to every project. Whether it's uncovering hidden
+          communication to every project. Whether it&apos;s uncovering hidden
           patterns, predicting future trends, or automating processes with AI,
-          I'm here to help you harness the full potential of your data. Let's
+          I&apos;m here to help you harness the full potential of your data. Let&apos;s
           work together to transform your data into actionable insights that
-          drive real results. Get in touch, and let's start unlocking the power
+          drive real results. Get in touch, and let&apos;s start unlocking the power
           of your data today!
         </p>
         <a
@@ -64,6 +65,7 @@ export default function Home() {
           Some of my work
         </p>
         <TagList />
+        <ProjectsTable />
       </section>
     </div>
   );
