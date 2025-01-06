@@ -1,58 +1,28 @@
 "use client";
+import { Project } from "@/app/types";
 import { Tab, Tabs } from "@nextui-org/tabs";
 import { useState } from "react";
-import { BsPersonExclamation } from "react-icons/bs";
-import { CgEnter } from "react-icons/cg";
-import { FaMusic } from "react-icons/fa6";
-import { GiLovers } from "react-icons/gi";
-import { MdPhotoAlbum } from "react-icons/md";
-type tabs = "photos" | "love" | "amando";
-export default function ProjectsTabs() {
-  const [selected, setSelected] = useState<"photos" | "love" | "amando">(
-    "photos"
-  );
+import { projectsMockList } from "..";
+import ProjectsTable from "../ProjectTable";
+type ProjectTabs = {
+    listTabs : Project['type'][]
+}
+export default function ProjectsTabs({listTabs}: ProjectTabs) {
+  const [selected, setSelected] = useState<Project['type'] | null>();
+  const filteredProjects : Project[] = projectsMockList.filter(project => project.type === selected)
   return (
     <div>
       <Tabs
         selectedKey={selected}
-        onSelectionChange={(key) => setSelected(key as tabs)}
+        onSelectionChange={(key) => setSelected(key as Project['type'])}
       >
-        <Tab
-          className="rounded-md border border-foreground px-3 py-1"
-          key={"photos"}
-          title={
-            <div className="flex items-center space-x-2">
-              <MdPhotoAlbum color="#b1d2d1" size={20} />
-              <span>Photos</span>
-            </div>
-          }
-        >
-          <p className="text-center my-2 underline ">Josefino 1</p>
-        </Tab>
-        <Tab
-          className="rounded-md border border-foreground px-3 py-1"
-          key={"love"}
-          title={
-            <div className="flex items-center space-x-2">
-              <GiLovers color="#b1d2d1" size={20} />
-              <span>Love</span>
-            </div>
-          }
-        >
-          <p className="text-center my-2 underline ">Josefino 2</p>
-        </Tab>
-        <Tab
-          className="rounded-md border border-foreground px-3 py-1"
-          key={"amando"}
-          title={
-            <div className="flex items-center space-x-2">
-              <BsPersonExclamation color="#b1d2d1" size={20} />
-              <span>Amando</span>
-            </div>
-          }
-        >
-          <p className="text-center my-2 underline ">Josefino 3</p>
-        </Tab>
+        {listTabs.map((tab) => (
+          <Tab key={tab} title={
+            <span className="rounded-md border border-foreground px-3 py-1 hover:scale-125 hover:bg-foreground hover:text-background transition-all duration-300">{tab}</span> 
+            }>
+            <ProjectsTable projects={filteredProjects} /> 
+          </Tab>
+        ))}
       </Tabs>
     </div>
   );
