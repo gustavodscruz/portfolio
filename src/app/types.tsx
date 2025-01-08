@@ -2,11 +2,16 @@
 
 
 export type Project = {
-    id : number,
-    name : string,
-    desc : string,
-    image : string,
-    type : "Java" | "Typescript" | "React" 
+    illustration : {
+        url : string,
+        height : number, 
+        width : number
+    };
+    id : number;
+    title : string;
+    description : string;
+    githubLink : string;
+    projectDemo : string;
 }
 
 export type Certificate = {
@@ -20,4 +25,9 @@ export type Certificate = {
         height : number, 
         width : number
     },
+}
+
+export type Tag = {
+    id : string
+    projectType : string
 }

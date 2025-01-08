@@ -1,7 +1,9 @@
+import Link from "next/link";
+
 export default function Navbar() {
   return (
     <div className="nav">
-      <a>Home</a>
+      <Link href={'/'}>Home</Link>
       <a>About</a>
       <a>Projects</a>
       <a>Services</a>

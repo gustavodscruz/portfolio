@@ -1,16 +1,20 @@
+import Image from "next/image";
 import CertificatesTable from "./_components/Certificates/CertificatesTable";
 import ContactForm from "./_components/ContactForm";
 import ProjectsTabs from "./_components/Projects/ProjectsTabs";
 import ResumeFrame from "./_components/ResumeFrame";
+import { GraphProvider } from "./_components/GraphProvider";
 
 export default function Home() {
   return (
     <div className="flex flex-col items-center">
       <section className="rounded-full bg-grid-pattern bg-grid-size bg-foreground flex flex-col gap-6 items-center justify-center py-8 px-16 mx-16 my-4">
-        <img
+        <Image
           alt="My profile pic"
           src="https://github.com/gustavodscruz.png"
           className="size-40 bg-cover rounded-full"
+          height={160}
+          width={160}
         />
         <div className="flex flex-col gap-2">
           <h2 className="font-secondary text-4xl text-center text-slate-50">
@@ -26,7 +30,7 @@ export default function Home() {
           Postman and Insomnia. My goal is to continuously improve my skills and
           become an excellent full-stack developer.
         </p>
-        <button className="border border-gray-300 rounded-md px-4 py-2 ml-6 w-max hover:bg-gray-300 hover:text-slate-700 clickable">
+        <button className="border border-gray-300 rounded-md px-4 py-2 w-max hover:bg-gray-300 hover:text-slate-700 clickable">
           Contact me
         </button>
       </section>
@@ -74,7 +78,9 @@ export default function Home() {
         <p className="text-center font-semibold text-sm -mt-2">
           Badges than I conquer with time
         </p>
-        <CertificatesTable />
+        <GraphProvider>
+          <CertificatesTable />
+        </GraphProvider>
       </section>
       <ContactForm />
     </div>

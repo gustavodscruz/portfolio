@@ -1,7 +1,9 @@
+
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./_components/header";
+import { GraphProvider } from "./_components/GraphProvider";
 
 const jetbrains = localFont({
   src: "./_fonts/JetBrainsMono.ttf",
@@ -32,7 +34,9 @@ export default function RootLayout({
         className={`${jetbrains.variable} ${geo.variable} antialiased flex flex-col bg-background max-w-screen-lg m-auto font-primary text-slate-300`}
       > 
           <Header />
-          <main className="flex-grow">{children}</main>
+          <main className="flex-grow">
+              <GraphProvider>{children}</GraphProvider>
+          </main>
       </body>
     </html>
   );
