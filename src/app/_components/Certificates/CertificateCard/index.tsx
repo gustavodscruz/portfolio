@@ -1,12 +1,11 @@
 "use client"
 
-import { Certificate } from "@/app/types";
+import { CertificateCardType } from "@/app/types";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { BiSolidCertification } from "react-icons/bi";
 
-export type CertificateCardType = Omit<Certificate, 'description' | 'linkCertificate' | 'issuer'>
 
 
 export default function CerticateCard({title, illustration, id} : CertificateCardType) {

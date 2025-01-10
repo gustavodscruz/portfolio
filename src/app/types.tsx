@@ -27,7 +27,17 @@ export type Certificate = {
     },
 }
 
+export type CertificateCardType = Omit<Certificate, 'description' | 'linkCertificate' | 'issuer'>
+
 export type Tag = {
     id : string
     projectType : string
 }
+
+
+export type ProjectCardType = Omit<Project, 'description' | 'githubLink' | 'projectDemo'>
+
+export type ProjectsTagsType = {
+    _allReferencingProjects: ProjectCardType[]
+}
+

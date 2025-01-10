@@ -1,9 +1,8 @@
 import Image from "next/image";
 import CertificatesTable from "./_components/Certificates/CertificatesTable";
 import ContactForm from "./_components/ContactForm";
-import ProjectsTabs from "./_components/Projects/ProjectsTabs";
 import ResumeFrame from "./_components/ResumeFrame";
-import { GraphProvider } from "./_components/GraphProvider";
+import ProjectsCarrousel from "./_components/Projects/ProjectsCarrousel";
 
 export default function Home() {
   return (
@@ -66,7 +65,8 @@ export default function Home() {
           Some of my work
         </p>
         <div>
-          <ProjectsTabs listTabs={["Java", "React", "Typescript"]}/> 
+          {/* <ProjectsTabs />  */}
+          <ProjectsCarrousel />
         </div>
         {/* <TagList />
         <ProjectsTable /> */}
@@ -78,9 +78,7 @@ export default function Home() {
         <p className="text-center font-semibold text-sm -mt-2">
           Badges than I conquer with time
         </p>
-        <GraphProvider>
           <CertificatesTable />
-        </GraphProvider>
       </section>
       <ContactForm />
     </div>

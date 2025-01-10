@@ -2,7 +2,6 @@
 import { CertificateFindByIDQuery } from "@/app/_components/Certificates";
 import { Certificate } from "@/app/types";
 import Image from "next/image";
-import { useState } from "react";
 import { useQuery } from "urql";
 
 
