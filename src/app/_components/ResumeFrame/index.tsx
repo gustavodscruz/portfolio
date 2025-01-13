@@ -10,7 +10,7 @@ export default function ResumeFrame() {
       hover:bg-gray-300 hover:text-slate-700 clickable my-4 flex gap-2 items-center ${open ? 'bg-gray-300 text-slate-700' : ''}`}
       onClick={() => setOpen(!open)}
       >
-        <span>{open ? 'Close' : 'Open'} Resume</span> <FaFilePdf size={20} color="#aac0c6" />
+        <span>{open ? 'Fechar' : 'Mostrar'} Currículo</span> <FaFilePdf size={20} color="#aac0c6" />
       </button>
       <iframe
         src="/curriculo.pdf"

@@ -79,7 +79,7 @@ export default function ContactForm() {
           Send
         </button>
       </form>
-      <div className="flex flex-col justify-center items-center">
+      {/* <div className="flex flex-col justify-center items-center">
         <p className="text-2xl font-semibold">show contact attemps</p>
         <div className="my-3 grid grid-cols-3 columns-auto gap-3 max-w-screen-lg">
             {contactList ? (
@@ -93,7 +93,7 @@ export default function ContactForm() {
                 ))
             ) : 'Without any contact attemps!'}
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

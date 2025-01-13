@@ -15,7 +15,7 @@ export default function CerticateCard({title, illustration, id} : CertificateCar
 
   return (
     <>
-      <div className="rounded-lg py-6 px-8 border border-foreground flex flex-col gap-4 items-center justify-center clickable min-h-52 w-full" onMouseEnter={invertColor} onMouseLeave={invertColor} onClick={
+      <div className="rounded-lg py-6 px-8 border border-foreground flex flex-col gap-4 items-center justify-center transition-all duration-300 hover:bg-slate-700 cursor-pointer min-h-52 w-full" onMouseEnter={invertColor} onMouseLeave={invertColor} onClick={
         () => {
           navigate.push(`/certificates/${id}`)
         }

@@ -19,6 +19,8 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import "@/app/_lib/custom-swiper-bullets.css"
+
 // import Image from "next/image";
 import ProjectCard from "../ProjectCard";
 // import SlidePrevButton from "./slidePrevButton";
@@ -57,22 +59,12 @@ export default function ProjectsCarrousel() {
         // scrollbar={{ draggable: true }}
         // autoplay={{ delay: 500 }}
       >
-        {/* <SlidePrevButton /> */}
         {projects &&
           projects.map((project, index) => (
             <SwiperSlide key={index} virtualIndex={index}>
               <ProjectCard project={project} key={index}/> 
-              {/* <h3>{title}</h3>
-              <Image
-                src={illustration.url}
-                height={illustration.height}
-                width={illustration.width}
-                alt={title}
-                className="object-cover h-40 w-72 rounded-md"
-              /> */}
             </SwiperSlide>
           ))}
-        {/* <SlideNextButton />  */}
       </Swiper>
     </div>
   );

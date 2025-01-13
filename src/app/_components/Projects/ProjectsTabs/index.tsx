@@ -15,7 +15,6 @@ export default function ProjectsTabs() {
   }
 
   const tags = getTags()
-  console.log(tags)
   const [selected, setSelected] = useState(tags && tags.length > 0 ? tags[0].projectType : "");
   return (
     <div>

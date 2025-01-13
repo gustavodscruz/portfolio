@@ -13,7 +13,6 @@ export default function ProjectsTable({typeId} : {typeId : Tag['id']}) {
     else return null
   }
   const projects = getProjects()
-  console.log(projects)
   return (
     <div>
       {projects != null && projects.length > 0 ? (

@@ -1,37 +1,33 @@
 "use client";
 import { CertificateFindByIDQuery } from "@/app/_components/Certificates";
+import Spinner from "@/app/_components/Spinner";
 import { Certificate } from "@/app/types";
 import Image from "next/image";
 import { useQuery } from "urql";
-
-
-
 
 export default function CertificateIndex({
   params,
 }: {
   params: { id: string };
 }) {
-
   const [result] = useQuery({
     query: CertificateFindByIDQuery,
-    variables: { id : params.id}
-  })
-  console.log(result)
-  const certificate = result.data?.certificate as Certificate
+    variables: { id: params.id },
+  });
+  const certificate = result.data?.certificate as Certificate;
 
-  console.log(certificate);
   return (
     <div className="flex flex-col items-center">
       {certificate ? (
         <>
-          <h2>{certificate!.title}</h2>
+          
+          <h2 className="text-center">{certificate!.title} - {certificate!.issuer}</h2>
           <Image
             src={certificate!.illustration.url}
             alt={certificate!.title}
-            height={certificate!.illustration.height * 0.20}
-            width={certificate!.illustration.width * 0.30}
-            className="object-cover rounded-full my-4"
+            height={720}
+            width={1280}
+            className="object-cover rounded-md my-4 w-[1280x] h-[480px]"
           />
           <p>{certificate!.description}</p>
           <a
@@ -41,12 +37,10 @@ export default function CertificateIndex({
           >
             Ver certificado
           </a>
-          <p className="text-center px-3 py-1 rounded-full border border-foreground">
-            {certificate!.issuer}
-          </p>
+          <p className="text-center "></p>
         </>
       ) : (
-        <div>Não foi possível resgatar o certificado!</div>
+        <Spinner /> 
       )}
     </div>
   );

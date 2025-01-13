@@ -1,9 +1,9 @@
-
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./_components/header";
 import { GraphProvider } from "./_components/GraphProvider";
+import Template from "./template";
 
 const jetbrains = localFont({
   src: "./_fonts/JetBrainsMono.ttf",
@@ -20,7 +20,7 @@ const geo = localFont({
 export const metadata: Metadata = {
   title: "gustavodscruz - make your experience",
   description: "Let's make something new with me?",
-  icons: [{ url: "./dev.ico" }]
+  icons: [{ url: "./dev.ico" }],
 };
 
 export default function RootLayout({
@@ -32,11 +32,13 @@ export default function RootLayout({
     <html lang="pt-br">
       <body
         className={`${jetbrains.variable} ${geo.variable} antialiased flex flex-col bg-background max-w-screen-lg m-auto font-primary text-slate-300`}
-      > 
-          <Header />
-          <main className="flex-grow">
-              <GraphProvider>{children}</GraphProvider>
-          </main>
+      >
+        <Header />
+        <main className="flex-grow">
+          <Template>
+            <GraphProvider>{children}</GraphProvider>
+          </Template>
+        </main>
       </body>
     </html>
   );
