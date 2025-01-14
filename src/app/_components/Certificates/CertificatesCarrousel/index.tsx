@@ -27,6 +27,8 @@ export default function CertificatesTable() {
   return (
     <div className="max-w-screen-lg m-auto flex justify-between items-center">
       <Swiper
+        suppressHydrationWarning={true}
+        suppressContentEditableWarning={true}
         className="flex justify-between"
         loop={true}
         spaceBetween={30}

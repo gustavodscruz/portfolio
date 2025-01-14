@@ -42,6 +42,8 @@ export default function ProjectsCarrousel() {
   return (
     <div className="max-w-screen-lg m-auto flex justify-between items-center">
       <Swiper
+        suppressHydrationWarning={true}
+        suppressContentEditableWarning={true}
         className="flex justify-between"
         // width={720}
         loop={true}

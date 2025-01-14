@@ -1,5 +1,5 @@
 import Image from "next/image";
-import CertificatesTable from "./_components/Certificates/CertificatesTable";
+import CertificatesTable from "./_components/Certificates/CertificatesCarrousel";
 import ResumeFrame from "./_components/ResumeFrame";
 import ProjectsCarrousel from "./_components/Projects/ProjectsCarrousel";
 import { FaLinkedin } from "react-icons/fa";
@@ -105,7 +105,7 @@ export default function Home() {
           <a href="https://www.linkedin.com/gustavodiasdsc" className="hover:scale-125 transition-all duration-300 justify-center  bg-[#0a66c2] px-5 py-1 rounded-md flex gap-2 items-center font-semibold"  target="_blank">
             <FaLinkedin
               className="cursor-pointer hover:scale-125 transition-all duration-300"
-              color="#0c457d"
+              color="#072849"
               size={20}
             />
             Linkedin
@@ -117,7 +117,7 @@ export default function Home() {
           >
             <MdEmail
               className="cursor-pointer hover:scale-125 transition-all duration-300"
-              color="#ed4436"
+              color="#993222"
               size={22}
             />
             gustavodiasdsc@gmail.com

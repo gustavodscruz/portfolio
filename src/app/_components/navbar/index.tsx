@@ -1,7 +1,7 @@
 
 export default function Navbar() {
   return (
-    <div className="nav ">
+    <div className="nav w-full">
       <a className="max-sm:hidden">About</a>
       <a className="max-sm:hidden">Projects</a>
       <a className="max-sm:hidden">Services</a>

@@ -16,33 +16,23 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "plugins": [
-      {
-        "name": "@0no-co/graphqlsp",
-        "schema": {
-          "url": "https://graphql.datocms.com",
-          "headers": {
-            "Accept": "application/graphql-response+json",
-            "Authorization": "Bearer 40d1d689c7bbea6b48c7d294216ba2"
-          }
-        },
-        "tadaOutputLocation": "src/graphql-env.d.ts"
-      },
-      {
-        "name": "next"
-      }
-    ],
     "paths": {
       "@/*": [
         "./src/*"
       ]
-    }
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "graphql-compiler.ts"
   ],
   "exclude": [
     "node_modules"
