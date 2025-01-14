@@ -22,10 +22,10 @@ export const metadata: Metadata = {
   description: "Let's make something new with me?",
   icons: [{ url: "./dev.ico" }],
   openGraph : {
-    images: [{url: "./website.jpg"}]
+    images: [{url: "./gustavo.jpg"}]
   },
   twitter : {
-    images: [{url: "./website.jpg"}]
+    images: [{url: "./gustavo.jpg"}]
   }
 };
 
