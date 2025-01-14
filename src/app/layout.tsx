@@ -21,6 +21,12 @@ export const metadata: Metadata = {
   title: "gustavodscruz - make your experience",
   description: "Let's make something new with me?",
   icons: [{ url: "./dev.ico" }],
+  openGraph : {
+    images: [{url: "./website.jpg"}]
+  },
+  twitter : {
+    images: [{url: "./website.jpg"}]
+  }
 };
 
 export default function RootLayout({
