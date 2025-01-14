@@ -18,8 +18,8 @@ const geo = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "gustavodscruz - make your experience",
-  description: "Let's make something new with me?",
+  title: "gustavodscruz.dev",
+  description: "Desenvolvedor Full-Stack Java e Typescript | Cientista de Dados Python",
   icons: [{ url: "./dev.ico" }],
   openGraph : {
     images: [{url: "./gustavo.jpg"}]
