@@ -46,7 +46,7 @@ export default function FloatingActions({
         >
           {/* Ícone */}
           <FaGithub color="#ededf1" size={30} />
-          <span className="absolute block mb-px text-sm font-medium -translate-y-1/2 -start-20 top-1/2">
+          <span className="max-sm:hidden absolute block mb-px text-sm font-medium -translate-y-1/2 -start-20 top-1/2">
             Github
           </span>
         </a>
@@ -58,7 +58,7 @@ export default function FloatingActions({
           >
             {/* Ícone */}
             <MdHttp color="#ededf1" size={30} />
-            <span className="absolute block mb-px text-sm font-medium -translate-y-1/2 -start-20 top-1/2">
+            <span className="max-sm:hidden absolute block mb-px text-sm font-medium -translate-y-1/2 -start-20 top-1/2">
               Website
             </span>
           </a>
