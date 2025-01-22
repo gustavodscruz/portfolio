@@ -32,7 +32,10 @@ export default function Home() {
           continuamente minhas habilidades e me tornar um excelente
           desenvolvedor full-stack.
         </p>
-        <a href="#contact" className="border border-gray-300 rounded-md px-4 py-2 w-max hover:bg-gray-300 hover:text-slate-700 clickable">
+        <a
+          href="#contact"
+          className="border border-gray-300 rounded-md px-4 py-2 w-max hover:bg-gray-300 hover:text-slate-700 clickable"
+        >
           Entre em contato
         </a>
       </section>
@@ -71,6 +74,34 @@ export default function Home() {
       </section>
       <section className="flex flex-col gap-5 my-5">
         <h2 className="text-center text-3xl font-semibold text-slate-50">
+          Serviços
+        </h2>
+        <p className="text-center font-semibold text-sm -mt-2">
+          Algumas coisas na qual posso ajudar você
+        </p>
+        <div className="grid grid-cols-1 gap-6 max-w-screen-xl m-auto sm:grid-cols-2 lg:grid-cols-3 text-slate-800 mt-6 max-sm:w-[80vw]">
+          <div className="p-4 bg-white rounded shadow hover:shadow-lg transition-shadow">
+            <h3 className="text-xl font-bold">WordPress - Landing Pages</h3>
+            <p className="text-sm mt-2">
+              Desenvolvimento rápido de sites e páginas de destino
+            </p>
+          </div>
+          <div className="p-4 bg-white rounded shadow hover:shadow-lg transition-shadow">
+            <h3 className="text-xl font-bold">Java | Spring Boot</h3>
+            <p className="text-sm mt-2">
+              Back-end de aplicações robustas e escaláveis
+            </p>
+          </div>
+          <div className="p-4 bg-white rounded shadow hover:shadow-lg transition-shadow">
+            <h3 className="text-xl font-bold">Next.js | React</h3>
+            <p className="text-sm mt-2">
+              Front-ends poderosos e landing pages modernas
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="flex flex-col gap-5 my-5">
+        <h2 className="text-center text-3xl font-semibold text-slate-50">
           Projetos
         </h2>
         <p className="text-center font-semibold text-sm -mt-2">
@@ -92,17 +123,32 @@ export default function Home() {
         </p>
         <CertificatesTable />
       </section>
-      <section id="contact" className="flex flex-col gap-4 my-3 bg-grid-pattern bg-grid-size bg-foreground py-20 px-44 rounded-full">
+      <section
+        id="contact"
+        className="flex flex-col gap-4 my-3 bg-grid-pattern bg-grid-size bg-foreground sm:py-20 sm:px-44 rounded-full max-sm:w-full max-sm:p-4"
+      >
         <h2 className="text-center text-3xl font-semibold text-slate-50">
           Entre em contato
         </h2>
         <p className="text-center font-semibold text-sm -mt-2">
           Vamos trabalhar juntos!
         </p>
-          <Image src="/linkedin.gif" height={480} width={1280} alt="linkedin gif" className="border-4 border-foreground rounded-[48px]  object-cover h-[360px] max-w-screen-sm max-sm:w-full max-sm:rounded-lg"/> 
-          <h3 className="text-center font-semibold tracking-wide text-xl">Fale comigo por aqui!</h3>
+        <Image
+          src="/linkedin.gif"
+          height={480}
+          width={1280}
+          alt="linkedin gif"
+          className="border-4 border-foreground rounded-[48px]  object-cover h-[360px] max-w-screen-sm max-sm:w-full max-sm:rounded-lg"
+        />
+        <h3 className="text-center font-semibold tracking-wide text-xl">
+          Fale comigo por aqui!
+        </h3>
         <div className="flex flex-col max-w-screen-sm m-auto gap-6 justify-center ">
-          <a href="https://www.linkedin.com/gustavodiasdsc" className="hover:scale-125 transition-all duration-300 justify-center  bg-[#0a66c2] px-5 py-1 rounded-md flex gap-2 items-center font-semibold"  target="_blank">
+          <a
+            href="https://www.linkedin.com/gustavodiasdsc"
+            className="hover:scale-125 transition-all duration-300 justify-center  bg-[#0a66c2] px-5 py-1 rounded-md flex gap-2 items-center font-semibold"
+            target="_blank"
+          >
             <FaLinkedin
               className="cursor-pointer hover:scale-125 transition-all duration-300"
               color="#072849"
@@ -122,10 +168,10 @@ export default function Home() {
             />
             gustavodiasdsc@gmail.com
           </a>
-          <a href="https://www.github.com/gustavodscruz"
-          target="_blank"
-          className="hover:scale-125 transition-all duration-300 justify-center  bg-[#222328] rounded-md px-5 py-1 flex gap-2 items-center font-semibold"
-          
+          <a
+            href="https://www.github.com/gustavodscruz"
+            target="_blank"
+            className="hover:scale-125 transition-all duration-300 justify-center  bg-[#222328] rounded-md px-5 py-1 flex gap-2 items-center font-semibold"
           >
             <FaGithub
               color="#ededf1"
