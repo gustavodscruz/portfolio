@@ -7,7 +7,7 @@
   @apply flex justify-end m-auto gap-4 items-center
 }
 .nav *:not(button) {
-  @apply text-lg w-auto hover:text-cyan-300 transition-all duration-300 
+  @apply  w-auto hover:text-cyan-300 transition-all duration-300 cursor-pointer
 }
 
 .clickable {
@@ -20,11 +20,15 @@
     @apply mb-3 leading-6
   }
   & ul {
-    @apply list-disc list-inside
+    @apply list-disc list-inside 
   }
 
   & li {
     @apply tracking-wider 
+  }
+
+  & strong {
+    @apply text-[#3a8fec]
   }
 
 }

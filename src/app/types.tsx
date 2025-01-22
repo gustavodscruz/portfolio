@@ -28,6 +28,9 @@ export type Certificate = {
         height : number, 
         width : number
     },
+    demo : {
+        projectType : string
+    } []
 }
 
 export type CertificateCardType = Omit<Certificate, 'description' | 'linkCertificate' | 'issuer'>

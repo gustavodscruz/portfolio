@@ -6,8 +6,8 @@ import Image from "next/image";
 import { useQuery } from "urql";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { mappingBadgesColors } from "@/app/_components/Tags/colors-badges-mapping";
 import FloatingActions from "@/app/_components/FloatingActions";
+import Tags from "@/app/_components/Tags";
 
 export default function ProjectIndex({ params }: { params: { id: string } }) {
   const [result] = useQuery({
@@ -16,9 +16,6 @@ export default function ProjectIndex({ params }: { params: { id: string } }) {
   });
   const project = result.data?.project as Project;
 
-  const skillColor = (skill : string) => {
-    return (mappingBadgesColors as Record<string, { color: string; logoColor: string }>)[skill ?? 'DEFAULT']
-  }
 
   return (
     <div className="flex flex-col items-center">
@@ -26,16 +23,7 @@ export default function ProjectIndex({ params }: { params: { id: string } }) {
         <>
           <h1 className="text-6xl uppercase tracking-wider font-secondary">{project!.title}</h1>
           <div className="flex gap-4 justify-center w-full mt-2 mb-4">
-            {project.demo.map((skill, index) => {
-              const { color, logoColor } = skillColor(skill.projectType.toLowerCase());
-              const tag = skill.projectType.toLowerCase(); 
-              console.log(tag, color, logoColor)
-              return (
-                <Markdown key={index}>
-                  {`![${skill.projectType}](https://img.shields.io/badge/${tag}-${color}?style=for-the-badge&logo=${tag}&logoColor=${logoColor})`}
-                </Markdown>
-              )
-            })}
+            <Tags tagList={project.demo} /> 
           </div>
           <Image
             src={project!.illustration.url}

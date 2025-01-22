@@ -13,6 +13,9 @@ export const CertificateFindByIDQuery = graphql(`
         width
         url
       }
+      demo {
+        projectType
+      }
     }
   }
 `);
@@ -27,6 +30,9 @@ export const ALL_CERTIFICATES_QUERY = graphql(`
         url
         height
         width
+      }
+      demo {
+        projectType
       }
     }
   }

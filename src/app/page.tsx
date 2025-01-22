@@ -39,7 +39,7 @@ export default function Home() {
           Entre em contato
         </a>
       </section>
-      <section className="flex flex-col gap-2 my-6 items-center p-4 max-sm:p-10">
+      <section className="flex flex-col gap-2 my-6 items-center p-4 max-sm:p-10" id="sobre">
         <h2 className="text-center max-sm:text-justify text-3xl font-semibold text-slate-50">
           Sobre mim :)
         </h2>
@@ -72,7 +72,7 @@ export default function Home() {
         </p>
         <ResumeFrame />
       </section>
-      <section className="flex flex-col gap-5 my-5">
+      <section className="flex flex-col gap-5 my-5" id="servicos">
         <h2 className="text-center text-3xl font-semibold text-slate-50">
           Serviços
         </h2>
@@ -81,26 +81,26 @@ export default function Home() {
         </p>
         <div className="grid grid-cols-1 gap-6 max-w-screen-xl m-auto sm:grid-cols-2 lg:grid-cols-3 text-slate-800 mt-6 max-sm:w-[80vw]">
           <div className="p-4 bg-white rounded shadow hover:shadow-lg transition-shadow">
-            <h3 className="text-xl font-bold">WordPress - Landing Pages</h3>
-            <p className="text-sm mt-2">
+            <h3 className="text-xl font-bold text-center min-h-16 flex items-center justify-center">WordPress & Elementor</h3>
+            <p className="text-sm mt-2 text-center">
               Desenvolvimento rápido de sites e páginas de destino
             </p>
           </div>
           <div className="p-4 bg-white rounded shadow hover:shadow-lg transition-shadow">
-            <h3 className="text-xl font-bold">Java | Spring Boot</h3>
-            <p className="text-sm mt-2">
+            <h3 className="text-xl font-bold text-center min-h-16 flex items-center justify-center">Java | Spring Boot</h3>
+            <p className="text-sm mt-2 text-center">
               Back-end de aplicações robustas e escaláveis
             </p>
           </div>
           <div className="p-4 bg-white rounded shadow hover:shadow-lg transition-shadow">
-            <h3 className="text-xl font-bold">Next.js | React</h3>
-            <p className="text-sm mt-2">
+            <h3 className="text-xl font-bold text-center min-h-16 flex items-center justify-center">Next.js | React</h3>
+            <p className="text-sm mt-2 text-center">
               Front-ends poderosos e landing pages modernas
             </p>
           </div>
         </div>
       </section>
-      <section className="flex flex-col gap-5 my-5">
+      <section className="flex flex-col gap-5 my-5" id="projetos">
         <h2 className="text-center text-3xl font-semibold text-slate-50">
           Projetos
         </h2>
@@ -114,7 +114,7 @@ export default function Home() {
         {/* <TagList />
         <ProjectsTable /> */}
       </section>
-      <section className="flex flex-col gap-5 my-5">
+      <section className="flex flex-col gap-5 my-5" id="certificados">
         <h2 className="text-center text-3xl font-semibold text-slate-50">
           Certificados
         </h2>
@@ -123,7 +123,7 @@ export default function Home() {
         </p>
         <CertificatesTable />
       </section>
-      <section id="contact" className="flex flex-col gap-4 my-3 bg-grid-pattern bg-grid-size bg-foreground max-sm:p-4 sm:py-20 sm:px-44 rounded-full">
+      <section id="contato" className="flex flex-col gap-4 my-3 bg-grid-pattern bg-grid-size bg-foreground max-sm:p-4 sm:py-20 sm:px-44 rounded-full">
         <h2 className="text-center text-3xl font-semibold text-slate-50">
           Entre em contato
         </h2>

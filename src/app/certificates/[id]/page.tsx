@@ -1,6 +1,7 @@
 "use client";
 import { CertificateFindByIDQuery } from "@/app/_components/Certificates";
 import Spinner from "@/app/_components/Spinner";
+import Tags from "@/app/_components/Tags";
 import { Certificate } from "@/app/types";
 import Image from "next/image";
 import Markdown from "react-markdown";
@@ -22,8 +23,12 @@ export default function CertificateIndex({
     <div className="flex flex-col items-center">
       {certificate ? (
         <>
-          
-          <h2 className="text-center">{certificate!.title} - {certificate!.issuer}</h2>
+          <h2 className="text-center">
+            {certificate!.title} - {certificate!.issuer}
+          </h2>
+          <div className="flex gap-4 justify-center w-full mt-2 mb-4">
+            <Tags tagList={certificate.demo} />
+          </div>
           <Image
             src={certificate!.illustration.url}
             alt={certificate!.title}
@@ -31,7 +36,7 @@ export default function CertificateIndex({
             width={1280}
             className="lg:object-cover rounded-md my-4 lg:w-[1280x] lg:h-[480px] object-contain"
           />
-          <Markdown remarkPlugins={[remarkGfm]} className="markdown"> 
+          <Markdown remarkPlugins={[remarkGfm]} className="markdown">
             {certificate!.description}
           </Markdown>
           <a
@@ -44,7 +49,7 @@ export default function CertificateIndex({
           <p className="text-center "></p>
         </>
       ) : (
-        <Spinner /> 
+        <Spinner />
       )}
     </div>
   );

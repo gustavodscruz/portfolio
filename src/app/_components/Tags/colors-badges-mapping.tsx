@@ -255,7 +255,7 @@ export const mappingBadgesColors = {
       color: "326ce5",
       logoColor: "ffffff"
     },
-    DEFAULT: {
+    "DEFAULT": {
         color: "000000",
         logoColor: "ffffff"
     }  
