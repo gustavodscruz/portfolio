@@ -2,7 +2,7 @@
 import { ALL_CERTIFICATES_QUERY } from "..";
 import { useQuery } from "urql";
 import CerticateCard from "../CertificateCard";
-import { Certificate, CertificateCardType } from "@/app/types";
+import { CertificateCardType } from "@/app/types";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   A11y,
@@ -84,11 +84,7 @@ export default function CertificatesTable() {
             <SwiperSlide key={index}>
               <CerticateCard
                 key={String(certificate.id)}
-                id={String(certificate.id)}
-                illustration={
-                  certificate.illustration as Certificate["illustration"]
-                }
-                title={certificate.title as Certificate["title"]}
+                {...certificate}
               />
             </SwiperSlide>
           ))}
