@@ -4,6 +4,10 @@ import Spinner from "@/app/_components/Spinner";
 import { Project } from "@/app/types";
 import Image from "next/image";
 import { useQuery } from "urql";
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import { mappingBadgesColors } from "@/app/_components/Tags/colors-badges-mapping";
+import FloatingActions from "@/app/_components/FloatingActions";
 
 export default function ProjectIndex({ params }: { params: { id: string } }) {
   const [result] = useQuery({
@@ -12,43 +16,41 @@ export default function ProjectIndex({ params }: { params: { id: string } }) {
   });
   const project = result.data?.project as Project;
 
+  const skillColor = (skill : string) => {
+    return (mappingBadgesColors as Record<string, { color: string; logoColor: string }>)[skill ?? 'DEFAULT']
+  }
+
   return (
     <div className="flex flex-col items-center">
       {project ? (
         <>
-          <h2>{project!.title}</h2>
+          <h1 className="text-6xl uppercase tracking-wider font-secondary">{project!.title}</h1>
+          <div className="flex gap-4 justify-center w-full mt-2 mb-4">
+            {project.demo.map((skill, index) => {
+              const { color, logoColor } = skillColor(skill.projectType.toLowerCase());
+              const tag = skill.projectType.toLowerCase(); 
+              console.log(tag, color, logoColor)
+              return (
+                <Markdown key={index}>
+                  {`![${skill.projectType}](https://img.shields.io/badge/${tag}-${color}?style=for-the-badge&logo=${tag}&logoColor=${logoColor})`}
+                </Markdown>
+              )
+            })}
+          </div>
           <Image
             src={project!.illustration.url}
             alt={project!.title}
             height={720}
             width={1280}
-            className="object-cover rounded-md my-4 w-[1280px] h-[480px] object-center"
+            className="lg:object-cover object-contain rounded-md my-4 lg:w-[1280px] lg:h-[480px] object-center"
           />
-          <p>{project!.description}</p>
-          {project!.projectDemo ? (
-            <a
-              href={project!.projectDemo}
-              target="_blank"
-              className="rounded border border-foreground px-3 py-1 clickable hover:bg-foreground hover:text-slate-700"
-            >
-              Ver projeto
-            </a>
-          ) : (
-            ""
-          )}
-          {project!.githubLink ? (
-            <a
-              className="text-center px-3 py-1 rounded-full border border-foreground"
-              href={project!.githubLink}
-            >
-              Ver certificado no github
-            </a>
-          ) : (
-            ""
-          )}
+          <Markdown remarkPlugins={[remarkGfm]} className="markdown">
+            {project!.description}
+          </Markdown>
+          <FloatingActions githubLink={project.githubLink} projectLink={project.projectDemo} /> 
         </>
       ) : (
-        <Spinner /> 
+        <Spinner />
       )}
     </div>
   );

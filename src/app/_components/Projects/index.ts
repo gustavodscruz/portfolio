@@ -13,6 +13,9 @@ export const ProjectByID = graphql(`
         height
         width
       }
+      demo {
+        projectType
+      }
     }
   }
 `);
@@ -59,6 +62,9 @@ export const AllProjectsCards = graphql(`
         url
         height
         width
+      }
+      demo {
+        projectType
       }
     }
   }

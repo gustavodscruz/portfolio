@@ -3,6 +3,8 @@ import { CertificateFindByIDQuery } from "@/app/_components/Certificates";
 import Spinner from "@/app/_components/Spinner";
 import { Certificate } from "@/app/types";
 import Image from "next/image";
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { useQuery } from "urql";
 
 export default function CertificateIndex({
@@ -27,9 +29,11 @@ export default function CertificateIndex({
             alt={certificate!.title}
             height={720}
             width={1280}
-            className="object-cover rounded-md my-4 w-[1280x] h-[480px]"
+            className="lg:object-cover rounded-md my-4 lg:w-[1280x] lg:h-[480px] object-contain"
           />
-          <p>{certificate!.description}</p>
+          <Markdown remarkPlugins={[remarkGfm]} className="markdown"> 
+            {certificate!.description}
+          </Markdown>
           <a
             href={certificate!.linkCertificate}
             target="_blank"

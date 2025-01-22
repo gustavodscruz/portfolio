@@ -13,3 +13,18 @@
 .clickable {
   @apply duration-300 transition-all hover:scale-110 cursor-pointer
 }
+
+
+.markdown {
+  * {
+    @apply mb-3 leading-6
+  }
+  & ul {
+    @apply list-disc list-inside
+  }
+
+  & li {
+    @apply tracking-wider 
+  }
+
+}

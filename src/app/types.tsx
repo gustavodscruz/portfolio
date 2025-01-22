@@ -12,6 +12,9 @@ export type Project = {
     description : string;
     githubLink : string;
     projectDemo : string;
+    demo : {
+        projectType : string
+    } []
 }
 
 export type Certificate = {
