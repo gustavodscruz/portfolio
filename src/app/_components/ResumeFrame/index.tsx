@@ -6,12 +6,19 @@ export default function ResumeFrame() {
 
   return (
     <>
-      <button className={`border border-gray-300 rounded-md px-4 py-2 
+      <button className={`max-sm:hidden border border-gray-300 rounded-md px-4 py-2 
       hover:bg-gray-300 hover:text-slate-700 clickable my-4 flex gap-2 items-center ${open ? 'bg-gray-300 text-slate-700' : ''}`}
       onClick={() => setOpen(!open)}
       >
         <span>{open ? 'Fechar' : 'Mostrar'} Currículo</span> <FaFilePdf size={20} color="#aac0c6" />
       </button>
+      <a className={`sm:hidden border border-gray-300 rounded-md px-4 py-2 
+      hover:bg-gray-300 hover:text-slate-700 clickable my-4 flex gap-2 items-center ${open ? 'bg-gray-300 text-slate-700' : ''}`}
+      href="/curriculo.pdf"
+      target="_blank"
+      >
+        <span>Mostrar Currículo</span> <FaFilePdf size={20} color="#aac0c6" />
+      </a>
       <iframe
         src="/curriculo.pdf"
         width={"100%"}

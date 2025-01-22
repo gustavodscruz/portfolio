@@ -123,10 +123,7 @@ export default function Home() {
         </p>
         <CertificatesTable />
       </section>
-      <section
-        id="contact"
-        className="flex flex-col gap-4 my-3 bg-grid-pattern bg-grid-size bg-foreground sm:py-20 sm:px-44 rounded-full max-sm:w-full max-sm:p-4"
-      >
+      <section id="contact" className="flex flex-col gap-4 my-3 bg-grid-pattern bg-grid-size bg-foreground max-sm:p-4 sm:py-20 sm:px-44 rounded-full">
         <h2 className="text-center text-3xl font-semibold text-slate-50">
           Entre em contato
         </h2>

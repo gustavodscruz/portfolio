@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${jetbrains.variable} ${geo.variable} antialiased flex flex-col bg-background max-w-screen-lg m-auto font-primary text-slate-300`}
+        className={`${jetbrains.variable} ${geo.variable} antialiased flex flex-col bg-background max-w-screen-lg m-auto font-primary text-slate-300 p-4`}
       >
         <Header />
         <main className="flex-grow">
