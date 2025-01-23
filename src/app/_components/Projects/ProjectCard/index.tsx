@@ -6,7 +6,7 @@ import Tags from "../../Tags"
 export default function ProjectCard({project, isOne} : {project : ProjectCardType, isOne?: boolean}) {
   const navigate = useRouter()
   return (
-    <div className="rounded-md py-4 px-6 border border-foreground flex flex-col gap-4 items-center justify-center cursor-pointer hover:bg-slate-700 hover:transition-all hover:duration-300" onClick={() => {
+    <div className="rounded-md py-4 px-6 border border-foreground flex flex-col gap-4 items-center justify-center cursor-pointer hover:bg-slate-700 hover:transition-all hover:duration-300 w-full h-full" onClick={() => {
       navigate.push(`/projects/${project.id}`)
     }}>
         {/** min-h-24 para voltar o titulo com altura minima */}
