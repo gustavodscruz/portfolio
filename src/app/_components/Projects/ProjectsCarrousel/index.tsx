@@ -35,7 +35,7 @@ export default function ProjectsCarrousel() {
   };
 
   const projects = getProjects();
-
+  
   const isOne = projects && projects.length < 3 
   return (
     <div className="max-w-screen-lg m-auto flex justify-between items-center max-sm:w-[80vw] ">

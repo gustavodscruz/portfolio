@@ -5,6 +5,7 @@ import ProjectsCarrousel from "./_components/Projects/ProjectsCarrousel";
 import { FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaGithub } from "react-icons/fa6";
+import ServicesSection from "./_components/Services";
 
 export default function Home() {
   return (
@@ -54,7 +55,7 @@ export default function Home() {
         <p className="text-center max-sm:text-left leading-7">
           Com uma paixão por desvendar insights de conjuntos de dados complexos,
           dedico-me a ajudar empresas a tomar decisões informadas e permanecer à
-          frente no mundo atual orientado por dados.{" "}
+          frente no mundo atual orientado por dados.
         </p>
         <p className="text-center max-sm:text-left leading-7">
           Trago uma mistura de conhecimento técnico, experiência prática e um
@@ -63,7 +64,7 @@ export default function Home() {
         <p className="text-center max-sm:text-left leading-7">
           Seja descobrindo padrões ocultos, prevendo tendências futuras ou
           automatizando processos com IA, estou aqui para ajudar você a
-          aproveitar todo o potencial dos seus dados.{" "}
+          aproveitar todo o potencial dos seus dados.
         </p>
         <p className="text-center max-sm:text-left leading-7">
           Vamos trabalhar juntos para transformar seus dados em insights
@@ -79,26 +80,7 @@ export default function Home() {
         <p className="text-center font-semibold text-sm -mt-2">
           Algumas coisas na qual posso ajudar você
         </p>
-        <div className="grid grid-cols-1 gap-6 max-w-screen-xl m-auto sm:grid-cols-2 lg:grid-cols-3 text-slate-800 mt-6 max-sm:w-[80vw]">
-          <div className="p-4 bg-white rounded shadow hover:shadow-lg transition-shadow">
-            <h3 className="text-xl font-bold text-center min-h-16 flex items-center justify-center">WordPress & Elementor</h3>
-            <p className="text-sm mt-2 text-center">
-              Desenvolvimento rápido de sites e páginas de destino
-            </p>
-          </div>
-          <div className="p-4 bg-white rounded shadow hover:shadow-lg transition-shadow">
-            <h3 className="text-xl font-bold text-center min-h-16 flex items-center justify-center">Java | Spring Boot</h3>
-            <p className="text-sm mt-2 text-center">
-              Back-end de aplicações robustas e escaláveis
-            </p>
-          </div>
-          <div className="p-4 bg-white rounded shadow hover:shadow-lg transition-shadow">
-            <h3 className="text-xl font-bold text-center min-h-16 flex items-center justify-center">Next.js | React</h3>
-            <p className="text-sm mt-2 text-center">
-              Front-ends poderosos e landing pages modernas
-            </p>
-          </div>
-        </div>
+        <ServicesSection /> 
       </section>
       <section className="flex flex-col gap-5 my-5" id="projetos">
         <h2 className="text-center text-3xl font-semibold text-slate-50">
@@ -108,11 +90,8 @@ export default function Home() {
           Um pouco do meu trabalho
         </p>
         <div>
-          {/* <ProjectsTabs />  */}
           <ProjectsCarrousel />
         </div>
-        {/* <TagList />
-        <ProjectsTable /> */}
       </section>
       <section className="flex flex-col gap-5 my-5" id="certificados">
         <h2 className="text-center text-3xl font-semibold text-slate-50">
