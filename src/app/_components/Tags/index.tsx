@@ -21,7 +21,7 @@ export default function Tags({
         const lowerTag = tag.projectType.toLowerCase().replace(' ', '-');
         const [isAvailable, { color, logoColor }] = skillDesc(lowerTag);
         return (
-          <Markdown key={index} className="border border-foreground">
+          <Markdown key={index} className="border border-foreground items-center flex justify-center">
             {`![${tag.projectType.toUpperCase()}](https://img.shields.io/badge/${lowerTag.toUpperCase()}-${color}${isAvailable ? `?style=for-the-badge&logo=${lowerTag}&logoColor=${logoColor}` : ''})`}
           </Markdown>
         );

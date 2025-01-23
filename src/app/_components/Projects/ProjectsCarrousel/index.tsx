@@ -11,7 +11,7 @@ import {
   Pagination,
   Virtual,
   // EffectCoverflow
-//   Scrollbar,
+  //   Scrollbar,
 } from "swiper/modules";
 
 import "swiper/css";
@@ -19,7 +19,7 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import "@/app/_lib/custom-swiper-bullets.css"
+import "@/app/_lib/custom-swiper-bullets.css";
 
 import ProjectCard from "../ProjectCard";
 
@@ -35,8 +35,8 @@ export default function ProjectsCarrousel() {
   };
 
   const projects = getProjects();
-  
-  const isOne = projects && projects.length < 3 
+
+  const isOne = projects && projects.length < 3;
   return (
     <div className="max-w-screen-lg m-auto flex justify-between items-stretch max-sm:w-[80vw] ">
       <Swiper
@@ -51,41 +51,36 @@ export default function ProjectsCarrousel() {
           },
           800: {
             slidesPerView:
-              projects && projects?.length < 2
-                ? projects.length
-                : 2,
+              projects && projects?.length < 2 ? projects.length : 2,
             slidesPerGroup:
-              projects && projects?.length < 2
-                ? projects.length
-                : 2,
+              projects && projects?.length < 2 ? projects.length : 2,
           },
           1200: {
             slidesPerView:
-              projects && projects?.length < 3
-                ? projects?.length
-                : 3,
+              projects && projects?.length < 3 ? projects?.length : 3,
             slidesPerGroup:
-              projects && projects?.length < 3
-                ? projects?.length
-                : 3,
+              projects && projects?.length < 3 ? projects?.length : 3,
           },
         }}
         loop={true}
         spaceBetween={30}
-        slidesPerView={3}
-        slidesPerGroup={3}
+        slidesPerView={projects && projects?.length < 3 ? projects?.length : 3}
+        slidesPerGroup={projects && projects?.length < 3 ? projects?.length : 3}
         modules={[Navigation, Pagination, A11y, Virtual, Autoplay]}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
         }}
-        
         pagination={{ clickable: true }}
       >
         {projects &&
           projects.map((project, index) => (
             <SwiperSlide key={index} virtualIndex={index}>
-              <ProjectCard project={project} key={index} isOne={isOne ?? true}/> 
+              <ProjectCard
+                project={project}
+                key={index}
+                isOne={isOne ?? true}
+              />
             </SwiperSlide>
           ))}
       </Swiper>
