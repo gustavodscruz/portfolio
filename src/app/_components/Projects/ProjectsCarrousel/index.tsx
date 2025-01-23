@@ -38,7 +38,7 @@ export default function ProjectsCarrousel() {
   
   const isOne = projects && projects.length < 3 
   return (
-    <div className="max-w-screen-lg m-auto flex justify-between items-center max-sm:w-[80vw] ">
+    <div className="max-w-screen-lg m-auto flex justify-between items-stretch max-sm:w-[80vw] ">
       <Swiper
         suppressHydrationWarning={true}
         suppressContentEditableWarning={true}
@@ -70,13 +70,10 @@ export default function ProjectsCarrousel() {
                 : 3,
           },
         }}
-        // width={720}
         loop={true}
         spaceBetween={30}
         slidesPerView={3}
         slidesPerGroup={3}
-        // slidesPerGroup={1}
-        // slidesPerView={1}
         modules={[Navigation, Pagination, A11y, Virtual, Autoplay]}
         autoplay={{
           delay: 2500,
