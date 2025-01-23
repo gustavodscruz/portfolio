@@ -78,6 +78,36 @@ export default function ServicesSection() {
             </p>
           </div>
         </SwiperSlide>
+        <SwiperSlide>
+          <div className="p-4 bg-white rounded shadow hover:shadow-lg transition-shadow">
+            <h3 className="text-xl font-bold text-center min-h-16 flex items-center justify-center text-background">
+              Agile
+            </h3>
+            <p className="text-sm mt-2 text-center text-background min-h-20 items-center flex justify-center">
+              Scrum e relacionáveis (Kanban) para organização de tarefas
+            </p>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="p-4 bg-white rounded shadow hover:shadow-lg transition-shadow">
+            <h3 className="text-xl font-bold text-center min-h-16 flex items-center justify-center text-background">
+              Banco de Dados
+            </h3>
+            <p className="text-sm mt-2 text-center text-background min-h-20 items-center flex justify-center">
+              Modelagem e programação para MySQL, MariaDB, Oracle, Firebase Firestore, SQLServer
+            </p>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="p-4 bg-white rounded shadow hover:shadow-lg transition-shadow">
+            <h3 className="text-xl font-bold text-center min-h-16 flex items-center justify-center text-background">
+              Plataformas
+            </h3>
+            <p className="text-sm mt-2 text-center text-background min-h-20 items-center flex justify-center">
+              Windows, Linux (WSL Ubuntu, Ubuntu 22 LTS)
+            </p>
+          </div>
+        </SwiperSlide>
       </Swiper>
     </div>
   );
