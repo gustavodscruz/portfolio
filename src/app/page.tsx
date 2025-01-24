@@ -22,7 +22,7 @@ export default function Home() {
           <h2 className="font-secondary  text-4xl max-sm:text-3xl text-center text-slate-50">
             Gustavo Dias da Silva Cruz
           </h2>
-          <h3 className="text-xl text-center">Dev Fullstack Java</h3>
+          <h3 className="text-xl text-center">Desenvolvedor Full Stack</h3>
         </div>
         <p className="text-sm text-center sm:w-7/12 max-sm:w-full m-auto leading-7">
           Sou um apaixonado desenvolvedor full-stack em treinamento na FIAP,
@@ -34,7 +34,7 @@ export default function Home() {
           desenvolvedor full-stack.
         </p>
         <a
-          href="#contact"
+          href="#contato"
           className="border border-gray-300 rounded-md px-4 py-2 w-max hover:bg-gray-300 hover:text-slate-700 clickable"
         >
           Entre em contato
