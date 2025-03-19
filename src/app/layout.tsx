@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./_components/header";
 import { GraphProvider } from "./_components/GraphProvider";
 import Template from "./template";
+import { getNotionData } from "./_domain/notion-service";
 
 const jetbrains = localFont({
   src: "./_fonts/JetBrainsMono.ttf",
@@ -28,6 +29,9 @@ export const metadata: Metadata = {
     images: [{url: "./gustavo.jpg"}]
   }
 };
+
+// getNotionData()
+//   .then((r) => console.log(r[0]));
 
 export default function RootLayout({
   children,
