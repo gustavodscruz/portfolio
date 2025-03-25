@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@datocms/cma-client-node": "^4.0.1",
     "@heroui/dropdown": "^2.3.10",
     "@hookform/resolvers": "^3.9.1",
     "@material-tailwind/react": "^2.1.10",

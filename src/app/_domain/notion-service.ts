@@ -1,4 +1,5 @@
 import { Client } from "@notionhq/client";
+import { Project } from "../types";
 
 async function getPageContent(pageId, notion) {
   const response = await notion.blocks.children.list({ block_id: pageId });
@@ -32,7 +33,7 @@ export async function getNotionData() {
     },
   });
 
-  const lista = [];
+  const lista : Project[] = [];
 
   // Use Promise.all para esperar todas as promises serem resolvidas
   const pages = await Promise.all(
@@ -41,11 +42,10 @@ export async function getNotionData() {
         id: page.id,
         title: page.properties.Title.title[0].plain_text,
         illustration: page.properties.Illustration.files[0].name,
-        tags: page.properties.Tags.multi_select.map((tag) => tag.name),
+        demo: []page.properties.Tags.multi_select.map((tag) => tag.name),
         projectDemo: page.properties["Project Demo"].url,
         githubLink: page.properties["Github Link"].url,
         description: await getPageContent(page.id, notion),
-        syncronized: page.properties.Sincronizado.checkbox,
       });
       markNotionPageAsUpdated(page.id, notion);
     })

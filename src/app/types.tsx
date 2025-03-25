@@ -4,15 +4,15 @@
 export type Project = {
     illustration : {
         url : string,
-        height : number, 
-        width : number
+        height? : number, 
+        width? : number
     };
-    id : number;
+    id : number | string;
     title : string;
     description : string;
     githubLink : string;
     projectDemo : string;
-    demo : {
+    demo? : {
         projectType : string
     } []
 }

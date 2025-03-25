@@ -5,6 +5,8 @@ import Header from "./_components/header";
 import { GraphProvider } from "./_components/GraphProvider";
 import Template from "./template";
 import { getNotionData } from "./_domain/notion-service";
+import { convertNotionToDato, projectTest, saveNotionProjectOnDato } from "./_domain/syncronize-notion-with-dato";
+import { createItem } from "./_domain/teste";
 
 const jetbrains = localFont({
   src: "./_fonts/JetBrainsMono.ttf",
@@ -29,9 +31,25 @@ export const metadata: Metadata = {
     images: [{url: "./gustavo.jpg"}]
   }
 };
+async function saveNotionProjectsMissing(){
+  const response = await getNotionData()
+  response.map(saveNotionProjectOnDato)
+}
 
-// getNotionData()
-//   .then((r) => console.log(r[0]));
+saveNotionProjectsMissing()
+
+// saveNotionProjectOnDato(projectTest).then((response) => {
+//   console.log("Project saved on DatoCMS");
+//   console.log(response);
+// });
+
+
+// async function logIt(){
+//   const response = await createItem()
+//   // console.log(response)
+// }
+
+// logIt()
 
 export default function RootLayout({
   children,
